@@ -13,9 +13,7 @@ jobs:
       - name: Run unit tests
         run: npm test
       - name: Deploy application
-        uses: serverless/github-action@master
-        with:
-          args: deploy
+        run: serverless
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
