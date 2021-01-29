@@ -12,8 +12,10 @@ jobs:
         run: npm install
       - name: Run unit tests
         run: npm test
-      - name: Deploy application
-        run: serverless
+      - name: Build web application
+        run: npx next build
+      - name: Deploy web application
+        run: npx serverless
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
